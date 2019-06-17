@@ -253,6 +253,9 @@ if __name__ == '__main__':
     img_rows, img_cols, img_channels = 32, 32, 3
 
     (X_train, Y_train), (X_val, Y_val), (X_test, Y_test) = _get_data()
+    X_val = X_val.transpose(0, 3, 1, 2)
+    X_train = X_train.transpose(0, 3, 1, 2)
+    X_test = X_test.transpose(0, 3, 1, 2)
 
     # true_weights = [0.9, 0.8, 0.7, 0.6]
     # false_weights = [0.1, 0.2, 0.3, 0.4]
